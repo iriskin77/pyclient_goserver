@@ -1,1 +1,17 @@
 syntax = "proto3";
+
+package hello;
+
+option go_package = "github.com/iriskin77/pyclient_goserver";
+
+service ServiceGreeting {
+    rpc SendGreeting(SendGreetingRequest) returns (SendGreetingResponse);
+}
+
+message SendGreetingRequest {
+    string greeting = 1;
+}
+
+message SendGreetingResponse {
+    string greeting = 1;
+}
